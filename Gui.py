@@ -8,12 +8,15 @@ board = chess.Board()
 valid_fen = board.fen()
 moves = list(board.legal_moves)
 
+saved_moves = ''
+move_num = 0
+
 class ChessBoard(tk.Tk):
     def __init__(self):
         super().__init__()
         
         self.title("Chess Board")
-        self.configure(bg='#d5d5d5')
+        self.configure(bg='#2c3e50')
         self.geometry("1024x600")
         self.attributes('-fullscreen', True)
         self.canvas = tk.Canvas(self, width=600, height=600, bg='#8f8f8f', highlightthickness=0)
@@ -31,8 +34,37 @@ class ChessBoard(tk.Tk):
             ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
             ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
         ]
+        
+        self.turn_lbl = tk.Label(self, text='Turn:', width=6, height=3, bg='#2c3e50', fg='white', font=('Roboto',25))
+        self.turn_lbl.place(x=635,y=0)
+        
+        self.turn_white_lbl = tk.Label(self, text='White', width=6, height=3, bg='#af7ac4', fg='white', font=('Roboto',25))
+        self.turn_white_lbl.place(x=755,y=0)
+        
+        self.turn_black_lbl = tk.Label(self, text='Black', width=6, height=3, bg='#2c3e50', fg='white', font=('Roboto',25))#34495e
+        self.turn_black_lbl.place(x=875,y=0)
+        
+        self.moves_lbl = tk.Label(self, text=saved_moves, width=50, height=15, bg='#98a3a3', fg='white', font=('Roboto',10), anchor='nw', wraplength=330, justify='left')
+        self.moves_lbl.place(x=635,y=130)
+        
+        self.menu_btn = tk.Label(self, text='Main\nmenu', width=6, height=3, bg='#34495e', fg='white', font=('Roboto',17), justify='center')
+        self.menu_btn.place(x=635,y=370)
+        
+        self.reset_btn = tk.Label(self, text='Reset\nboard', width=6, height=3, bg='#34495e', fg='white', font=('Roboto',17), justify='center')
+        self.reset_btn.place(x=725,y=370)
+        
+        self.test_btn = tk.Label(self, text='Other\noption', width=6, height=3, bg='#34495e', fg='white', font=('Roboto',17), justify='center')
+        self.test_btn.place(x=815,y=370)
+        
+        self.autohome_btn = tk.Label(self, text='Auto\nhome', width=6, height=3, bg='#c0392b', fg='white', font=('Roboto',17), justify='center')
+        self.autohome_btn.place(x=905,y=370)
+        
+        self.credits_lbl = tk.Label(self, text='Made by\nDominik Wilczewski', width=50, height=3, bg='#2c3e50', fg='white', font=('Roboto',10), justify='center')
+        self.credits_lbl.place(x=635,y=560)
+        
         self.draw_board()
         self.draw_pieces()
+        
 
     def load_piece_images(self):
         piece_images = {}
@@ -45,7 +77,7 @@ class ChessBoard(tk.Tk):
     def draw_board(self):
         for i in range(8):
             for j in range(8):
-                color = "#ebecd0" if (i + j) % 2 == 0 else "#779556"
+                color = "#edd6b0" if (i + j) % 2 == 0 else "#b88762"
                 self.canvas.create_rectangle(j * 75, i * 75, (j + 1) * 75, (i + 1) * 75, fill=color)
 
     def draw_pieces(self):
@@ -57,7 +89,7 @@ class ChessBoard(tk.Tk):
                     self.canvas.create_image(j * 75 + 37.5, i * 75 + 37.5, image=self.piece_images[piece], tags="piece")
 
     def move_piece(self, event):
-        global board, valid_fen, moves
+        global board, valid_fen, moves, move_num, saved_moves
 
         col = event.x // 75
         row = event.y // 75
@@ -136,12 +168,15 @@ class ChessBoard(tk.Tk):
                         elif self.board[row][col] == 'bp':
                             self.board[row][col] = 'bq'
                         
-                    #print(valid_fen)
+                    print(valid_fen)
                     #print(move)
                     #print(self.board)
                     print(board)
                     
                     self.draw_pieces()
+                    
+                    saved_moves += '['+str(move)+'], '
+                    self.moves_lbl.configure(text=saved_moves)
 
                     self.selected_piece = None
                     self.piece_to_move = None
@@ -159,8 +194,24 @@ class ChessBoard(tk.Tk):
         start_square = files[start_col] + ranks[start_row]
         end_square = files[end_col] + ranks[end_row]
         return start_square + end_square
+
+    def menu(self, event):
+        print('menu')
+        
+    def autohome(self, event):
+        print('autohome')
+        
+    def reset(self, event):
+        print('reset')
+        
+    def test(self, event):
+        print('test')   
     
 if __name__ == "__main__":
     app = ChessBoard()
     app.canvas.bind("<Button-1>", app.move_piece)
+    app.autohome_btn.bind("<Button-1>", app.autohome)
+    app.menu_btn.bind("<Button-1>", app.menu)
+    app.test_btn.bind("<Button-1>", app.test)
+    app.reset_btn.bind("<Button-1>", app.reset)
     app.mainloop()
