@@ -11,6 +11,8 @@ moves = list(board.legal_moves)
 saved_moves = ''
 move_num = 0
 
+turn = 'w'
+
 class ChessBoard(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -89,7 +91,7 @@ class ChessBoard(tk.Tk):
                     self.canvas.create_image(j * 75 + 37.5, i * 75 + 37.5, image=self.piece_images[piece], tags="piece")
 
     def move_piece(self, event):
-        global board, valid_fen, moves, move_num, saved_moves
+        global board, valid_fen, moves, move_num, saved_moves, turn
 
         col = event.x // 75
         row = event.y // 75
@@ -181,11 +183,21 @@ class ChessBoard(tk.Tk):
                     self.selected_piece = None
                     self.piece_to_move = None
                     promotion = False
+                    
+                    if turn == 'w':
+                        turn = 'b'
+                        self.turn_black_lbl.configure(bg='#af7ac4')   
+                        self.turn_white_lbl.configure(bg='#2c3e50')
+                    elif turn == 'b':
+                        turn = 'w'
+                        self.turn_black_lbl.configure(bg='#2c3e50')   
+                        self.turn_white_lbl.configure(bg='#af7ac4')
+                    
             else:
                 self.selected_piece = None
                 self.piece_to_move = None
                 promotion = False
-            
+            print(moves)
         #print(self.board)
     
     def algebraic_notation(self, start_row, start_col, end_row, end_col):
