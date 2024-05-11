@@ -6,8 +6,9 @@ This Python script implements a graphical user interface (GUI) for a chess playi
 
 The GUI Chess Playing Robot allows users to play chess against an automated opponent represented by the script. The robot follows standard chess rules and provides an interactive interface for gameplay.
 
-:exclamation::exclamation:
+:exclamation:
 This version is designed for 1024x600px resolution display
+:exclamation:
 
 ## Features
 
