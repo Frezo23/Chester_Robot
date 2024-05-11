@@ -6,6 +6,9 @@ This Python script implements a graphical user interface (GUI) for a chess playi
 
 The GUI Chess Playing Robot allows users to play chess against an automated opponent represented by the script. The robot follows standard chess rules and provides an interactive interface for gameplay.
 
+:exclamation::exclamation:
+This version is designed for 1024x600px resolution display
+
 ## Features
 
 - Graphical chessboard interface.
@@ -24,6 +27,6 @@ The GUI Chess Playing Robot allows users to play chess against an automated oppo
 1. Clone the repository to your local machine.
 2. Install the required Python libraries (Tkinter, Python-Chess).
 3. Navigate to the project directory.
-4. Run the `chess_robot.py` script using Python:
+4. Run the `Gui.py` script using Python:
    ```bash
-   python chess_robot.py
+   python Gui.py
