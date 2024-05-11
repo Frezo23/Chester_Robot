@@ -1,4 +1,4 @@
-# GUI Chess Playing Robot
+# GUI Chess Playing Robot "Chester"
 
 This Python script implements a graphical user interface (GUI) for a chess playing robot. Users can play chess against the robot using the Tkinter library for the interface.
 
