@@ -7,7 +7,7 @@ This Python script implements a graphical user interface (GUI) for a chess playi
 The GUI Chess Playing Robot allows users to play chess against an automated opponent represented by the script. The robot follows standard chess rules and provides an interactive interface for gameplay.
 
 :exclamation:
-This version is designed for [Waveshare 7" LCD IPS V4.1 1024x600px] display
+This version is designed for `Waveshare 7" LCD IPS V4.1 1024x600px` display
 :exclamation:
 
 ## Features
@@ -34,6 +34,14 @@ This version is designed for [Waveshare 7" LCD IPS V4.1 1024x600px] display
    ```
    ```bash
    pip install adafruit-circuitpython-motorkit
+   ```
+
+   - For Raspberry Pi
+   ```bash
+   sudo pip3 install python-chess
+   ```
+   ```bash
+   sudo pip3 install adafruit-circuitpython-motorkit
    ```
 
 3. Navigate to the project directory.
