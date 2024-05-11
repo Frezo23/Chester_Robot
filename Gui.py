@@ -37,32 +37,32 @@ class ChessBoard(tk.Tk):
             ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R']
         ]
         
-        self.turn_lbl = tk.Label(self, text='Turn:', width=6, height=3, bg='#2c3e50', fg='white', font=('Roboto',25))
+        self.turn_lbl = tk.Label(self, text='Turn:', width=5, height=3, bg='#2c3e50', fg='white', font=('Roboto',25))
         self.turn_lbl.place(x=635,y=0)
         
-        self.turn_white_lbl = tk.Label(self, text='White', width=6, height=3, bg='#af7ac4', fg='white', font=('Roboto',25))
-        self.turn_white_lbl.place(x=755,y=0)
+        self.turn_white_lbl = tk.Label(self, text='White', width=5, height=3, bg='#af7ac4', fg='white', font=('Roboto',25))
+        self.turn_white_lbl.place(x=762,y=0)
         
-        self.turn_black_lbl = tk.Label(self, text='Black', width=6, height=3, bg='#2c3e50', fg='white', font=('Roboto',25))#34495e
-        self.turn_black_lbl.place(x=875,y=0)
+        self.turn_black_lbl = tk.Label(self, text='Black', width=5, height=3, bg='#2c3e50', fg='white', font=('Roboto',25))#34495e
+        self.turn_black_lbl.place(x=890,y=0)#2c3e50
         
-        self.moves_lbl = tk.Label(self, text=saved_moves, width=50, height=15, bg='#98a3a3', fg='white', font=('Roboto',10), anchor='nw', wraplength=330, justify='left')
+        self.moves_lbl = tk.Label(self, text=saved_moves, width=40, height=15, bg='#98a3a3', fg='white', font=('Roboto',10), anchor='nw', wraplength=330, justify='left')
         self.moves_lbl.place(x=635,y=130)
         
         self.menu_btn = tk.Label(self, text='Main\nmenu', width=6, height=3, bg='#34495e', fg='white', font=('Roboto',17), justify='center')
-        self.menu_btn.place(x=635,y=370)
+        self.menu_btn.place(x=635,y=395)
         
         self.reset_btn = tk.Label(self, text='Reset\nboard', width=6, height=3, bg='#34495e', fg='white', font=('Roboto',17), justify='center')
-        self.reset_btn.place(x=725,y=370)
+        self.reset_btn.place(x=727,y=395)
         
         self.test_btn = tk.Label(self, text='Other\noption', width=6, height=3, bg='#34495e', fg='white', font=('Roboto',17), justify='center')
-        self.test_btn.place(x=815,y=370)
+        self.test_btn.place(x=819,y=395)
         
         self.autohome_btn = tk.Label(self, text='Auto\nhome', width=6, height=3, bg='#c0392b', fg='white', font=('Roboto',17), justify='center')
-        self.autohome_btn.place(x=905,y=370)
+        self.autohome_btn.place(x=911,y=395)
         
         self.credits_lbl = tk.Label(self, text='Made by\nDominik Wilczewski', width=50, height=3, bg='#2c3e50', fg='white', font=('Roboto',10), justify='center')
-        self.credits_lbl.place(x=635,y=560)
+        self.credits_lbl.place(x=600,y=560)
         
         self.draw_board()
         self.draw_pieces()
