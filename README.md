@@ -22,11 +22,19 @@ This version is designed for 1024x600px resolution display
 - Python 3.x
 - Tkinter library
 - Python-Chess library
+- board library --> `It should be downloaded with adafruit-circuitpython-motorkit library`
+- adafruit-circuitpython-motorkit library
 
 ## Usage
 
 1. Clone the repository to your local machine.
-2. Install the required Python libraries (Tkinter, Python-Chess).
+2. Install the required Python libraries (Tkinter, python-chess, adafruit-circuitpython-motorkit).
+   ```bash
+   pip install python-chess
+
+   ```bash
+   adafruit-circuitpython-motorkit
+
 3. Navigate to the project directory.
 4. Run the `Gui.py` script using Python:
    ```bash
