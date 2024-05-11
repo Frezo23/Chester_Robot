@@ -22,8 +22,10 @@ This version is designed for 1024x600px resolution display
 - Python 3.x
 - Tkinter library
 - Python-Chess library
+- [Python-Chess](# "optional title attribute") library
 - board library --> `It should be downloaded with adafruit-circuitpython-motorkit library`
 - adafruit-circuitpython-motorkit library
+- [adafruit-circuitpython-motorkit](# "optional title attribute") library
 
 ## Usage
 
@@ -33,7 +35,7 @@ This version is designed for 1024x600px resolution display
    pip install python-chess
    ```
    ```bash
-   adafruit-circuitpython-motorkit
+   pip install adafruit-circuitpython-motorkit
    ```
 
 3. Navigate to the project directory.
