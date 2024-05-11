@@ -21,9 +21,9 @@ This version is designed for 1024x600px resolution display
 
 - Python 3.x
 - Tkinter library
-- [Python-Chess](# "https://python-chess.readthedocs.io/en/latest/") library
+- [Python-Chess](https://python-chess.readthedocs.io/en/latest/ "https://python-chess.readthedocs.io/en/latest/") library
 - board library --> `It should be downloaded with adafruit-circuitpython-motorkit library`
-- [adafruit-circuitpython-motorkit](# "https://docs.circuitpython.org/projects/motorkit/en/latest/") library
+- [adafruit-circuitpython-motorkit](https://docs.circuitpython.org/projects/motorkit/en/latest/ "https://docs.circuitpython.org/projects/motorkit/en/latest/") library
 
 ## Usage
 
