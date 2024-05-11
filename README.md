@@ -8,8 +8,8 @@ The GUI Chess Playing Robot allows users to play chess against an automated oppo
 
 ## Features
 
-- Graphical chessboard interface with resizable components.
-- Supports legal move validation and pawn promotion.
+- Graphical chessboard interface.
+- Supports legal move validation and pawn promotion (In this version pawns are instantly promoted to queens).
 - Automatically detects checkmate and ends the game.
 - Responsive design for smooth gameplay experience.
 
